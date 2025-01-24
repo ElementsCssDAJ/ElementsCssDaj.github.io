@@ -1,0 +1,185 @@
+/* General Styles */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #000;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .container {
+    display: grid;
+    grid-template-areas: 
+      "left header header"
+      "left . right";
+    grid-template-columns: 1fr 3fr 1fr;
+    grid-template-rows: auto 1fr;
+    gap: 10px; /* Menor separación entre elementos */
+    width: 100vw; /* Ocupa el ancho completo de la ventana */
+    height: 100vh; /* Ocupa la altura completa de la ventana */
+  }
+  
+  /* Sidebar */
+  .sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .sidebar.left {
+    grid-area: left;
+    padding: 10px; /* Menor padding para ajustarlo */
+    border-radius: 0; /* Quita bordes redondeados */
+    position: fixed;
+  }
+  
+  .sidebar.right {
+    grid-area: right;
+    padding: 10px;
+    border-radius: 0; /* Quita bordes redondeados */
+    
+  }
+
+  .nav-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #444;
+    color: #fff;
+    border: none;
+    width: 50px; /* Ancho inicial solo para mostrar la imagen */
+    height: 50px; /* Altura fija */
+    text-align: left;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: background-color 0.3s ease, width 0.3s ease;
+    overflow: hidden;
+    
+  }
+
+  .nav-button img {
+    position: absolute;
+    width: 30px;
+    left: 20px;
+  }
+
+  .nav-button span {
+    opacity: 0;
+    white-space: nowrap;
+    transition: opacity 0.3s ease;
+    margin-left: 10px;
+  }
+
+  .nav-button:hover {
+    background-color: #6e8efb;
+    width: 250px; /* Ancho al hacer hover */
+  }
+
+  .nav-button:hover span {
+    opacity: 1;
+  }
+
+  .ad {
+    background-color: #444;
+    border: 2px solid #6e8efb;
+    border-radius: 10px;
+    padding: 15px;
+    text-align: center;
+    font-size: 1.5rem;
+    color: #fff;
+    /* tamaño */
+    height: 600px;
+    width: 300px;
+  }
+  
+  /* Header */
+  .header {
+    position: relative;
+    grid-area: header;
+    color: #fff;
+    text-align: center;
+    border-radius: 0; /* Quita bordes redondeados */
+    display: flex;
+
+    align-items: center;
+    gap: 10px;
+  }
+  #headercontainer {
+    position: relative;
+  }
+
+  #headercontainer h1 {
+    top: 0px;
+    left: 50%;
+    font-weight: bold;
+    background: linear-gradient(to right, #68bdf7, #8a4cf7);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 7rem;
+    margin-top: 20px;
+  }
+  #headercontainer h2 {
+    top: 20%;
+    right: -10%;
+    font-family: 'Just Me Again Down Here', sans-serif;
+    font-size: 3rem;
+    position: absolute;
+}
+  #headersearch {
+    position: absolute;
+    bottom: 0;
+    width: 700px;
+    height: 230px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .search-bar {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    margin-top: 25%;
+  }
+  
+  .search-bar input {
+    background-color: #2F2F2F;
+    padding: 10px;
+    color: #7c7c7c;
+    border: 2px solid rgb(110, 142, 251);
+    border-radius: 20px;
+    width: 300px;
+  }
+  
+  .search-btn {
+    background: linear-gradient(to right, #68bdf7, #8a4cf7);
+    color: #fff;
+    border: 2px solid rgb(110, 142, 251);
+    border-radius: 20px;
+    padding: 10px 10px;
+    cursor: pointer;
+  }
+  .search-btn:hover {
+    background: linear-gradient(to right, #539ccc, #6f31db);
+    color: #fff;
+    border-radius: 20px;
+    padding: 11px 11px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .language-select,
+  .category-select {
+    background: linear-gradient(to right, #68bdf7, #8a4cf7);
+    color: #fff;
+    background-color: #444;
+    border: none;
+    border-radius: 20px;
+    padding: 10px;
+    cursor: pointer;
+  }
