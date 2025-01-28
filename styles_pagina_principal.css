@@ -21,6 +21,15 @@ body {
     width: 100vw; /* Ocupa el ancho completo de la ventana */
     height: 100vh; /* Ocupa la altura completa de la ventana */
   }
+  #posts-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0;
+    margin: 0;
+    padding: 0;
+    flex-direction: row-reverse;
+}
+  
   
   /* Sidebar */
   .sidebar {
@@ -42,7 +51,14 @@ body {
     border-radius: 0; /* Quita bordes redondeados */
     
   }
-
+  .section-left{
+    grid-column: 1 / 3; /* Ocupa desde la columna 1 hasta la columna 3 (izquierda + centro) */
+    grid-row: 2 / 2;
+    padding: 10px;
+    border-radius: 0;
+  }
+  
+  
   .nav-button {
     display: flex;
     align-items: center;
@@ -104,7 +120,6 @@ body {
     text-align: center;
     border-radius: 0; /* Quita bordes redondeados */
     display: flex;
-
     align-items: center;
     gap: 10px;
   }
@@ -183,3 +198,113 @@ body {
     padding: 10px;
     cursor: pointer;
   }
+
+  /* ----------------Posts------------------- */
+  .post {
+    width: 350px;
+    /* height: 430px; */
+    float: right;
+    margin: 10px;
+    border-radius: 30px;
+    border: 3px solid #6e8efb;
+    background: rgba(37, 35, 35, 0.9);
+    box-shadow: 0px 0px 11.3px 2px rgba(0, 0, 0, 0.25) inset;
+    padding: 30px;
+    /* position: relative; */
+    transition: opacity 0.5s ease;
+}
+
+
+.show-code-btn {
+  position: relative;
+  left: 20%;
+  /* Ajusta esta distancia según sea necesario */
+  /* Coloca el botón en el centro horizontalmente */
+  transform: translateX(-50%);
+  padding: 10px 20px;
+  border: 1px solid rgba(85, 85, 85, 1);
+  border-radius: 30px;
+  background-color: rgba(42, 42, 42, 1);
+  color: white;
+  cursor: pointer;
+}
+
+.show-code-btn:hover {
+  background-color: rgb(53, 52, 52);
+}
+
+.tags-container {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 10px;
+  position: relative;
+  left: 5%;
+  align-items: center;
+  /* Centra verticalmente el contenido */
+}
+
+.tags-container::before {
+  content: "Tags: ";
+  margin-right: 4px;
+  color: rgba(142, 142, 142, 1);
+  font-weight: bold;
+}
+
+.tag {
+  margin: 5px;
+  padding: 4px 10px;
+  border-radius: 5px;
+  border: 1px solid rgba(85, 85, 85, 1);
+  background: rgba(42, 42, 42, 1);
+  color: rgba(142, 142, 142, 1);
+}
+
+
+.theme-checkbox {
+  float: right;
+  --toggle-size: 12px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  width: 4.25em;
+  height: 2.125em;
+  background: -webkit-gradient(linear, left top, right top, color-stop(50%, #2a2a2a), color-stop(50%, #efefef)) no-repeat;
+  background: -o-linear-gradient(left, #2a2a2a 50%, #efefef 50%) no-repeat;
+  background: linear-gradient(to right, #2a2a2a 50%, #efefef 50%) no-repeat;
+  background-size: 205%;
+  background-position: 0;
+  -webkit-transition: 0.4s;
+  -o-transition: 0.4s;
+  transition: 0.4s;
+  border-radius: 99em;
+  position: relative;
+  cursor: pointer;
+  font-size: var(--toggle-size);
+}
+
+.theme-checkbox::before {
+  content: "";
+  width: 1.25em;
+  height: 1.25em;
+  position: absolute;
+  top: 0.438em;
+  left: 0.438em;
+  background: -webkit-gradient(linear, left top, right top, color-stop(50%, #2a2a2a), color-stop(50%, #efefef)) no-repeat;
+  background: -o-linear-gradient(left, #2a2a2a 50%, #efefef 50%) no-repeat;
+  background: linear-gradient(to right, #2a2a2a 50%, #efefef 50%) no-repeat;
+  background-size: 205%;
+  background-position: 100%;
+  border-radius: 50%;
+  -webkit-transition: 0.4s;
+  -o-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.theme-checkbox:checked::before {
+  left: calc(100% - 1.45em - 0.338em);
+  background-position: 0;
+}
+
+.theme-checkbox:checked {
+  background-position: 100%;
+}
