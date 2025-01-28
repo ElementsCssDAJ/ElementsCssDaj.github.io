@@ -7,8 +7,27 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-  }
+
+    scrollbar-color: rgb(41, 67, 214) rgb(107, 44, 158); /* Firefox-specific styling */
+    scrollbar-width: thin; /* Firefox-specific width */
+}
+ /* Customize the scrollbar */
+ ::-webkit-scrollbar {
+  width: 8px; /* Adjust scrollbar width */
+  height: 8px; /* Adjust scrollbar height (for horizontal scroll) */
+  border-radius: 10px; /* Apply border radius to the scrollbar */
+ }
+::-webkit-scrollbar-thumb {
+  background-color: rgb(77, 76, 177); /* Scrollbar thumb color */
+  border-radius: 10px; /* Border radius for the thumb */
+}
+
+::-webkit-scrollbar-track {
+  background-color: #1a1a1a; /* Track color */
+  border-radius: 10px; /* Border radius for the track */
+}
+
+  
   
   .container {
     display: grid;
@@ -110,6 +129,7 @@ body {
     /* tamaño */
     height: 600px;
     width: 300px;
+    position:fixed;
   }
   
   /* Header */
@@ -254,7 +274,6 @@ body {
   background: rgba(42, 42, 42, 1);
   color: rgba(142, 142, 142, 1);
 }
-
 
 .theme-checkbox {
   float: right;
