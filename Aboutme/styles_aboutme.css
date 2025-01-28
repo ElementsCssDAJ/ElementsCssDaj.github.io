@@ -1,0 +1,109 @@
+body {
+  background-color: black;
+  color: white;
+  font-family: cursive;
+  text-align: center;
+}
+h1 {
+  top: 0px;
+  left: 50%;
+  font-weight: bold;
+  background: linear-gradient(to right, #68bdf7, rgb(109, 8, 109));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 6rem;
+  margin-top: 20px;
+  font-family: Arial, sans-serif;
+  margin-bottom: 0px;
+}
+.container {
+  display: flex;
+  justify-content: center;
+  gap: 70px;
+  margin-top: 40px;
+}
+.box {
+  width: 30%;
+  background: #222;
+  padding: 25px;
+  border-radius: 15px;
+  border: 3px solid purple;
+  position: relative;
+}
+.box img {
+  width: 100%;
+  border-radius: 10px;
+}
+.box p {
+  font-size: 1.2em;
+  margin-bottom: 15px;
+  text-align: right;
+  width: 85%;
+  float: right;
+}
+.box::before {
+  content: "";
+  width: 165px;
+  height: 135px;
+  position: absolute;
+  top: -30px;
+  left: -55px;
+  background: url('/imgs/weblogoDAJ.webp') no-repeat center/cover;
+}
+.box:nth-child(2)::before {
+  background: url('/imgs/editorDAJ.webp') no-repeat center/cover;
+}
+
+.btn-sections {
+  margin-top: 20px;
+  background: linear-gradient(to right, #68bdf7, #4a1a9c);
+  width: auto;
+  padding: 10px 20px;
+  border: 1px solid rgba(85, 85, 85, 1);
+  border-radius: 30px;
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 1rem;
+  appearance: none; /* Elimina el estilo por defecto del navegador */
+  position: relative;
+  border: 2px solid #6e8efb;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  outline: none;
+  text-decoration: none;
+}
+.btn-sections:hover {
+  background: linear-gradient(to right, #2e4eb8, #67137c);
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+  color: #ffff;
+  border: 2px solid #ffffff;
+
+  font-size: 1em;
+  cursor: pointer;
+  transition: all 0.4s ease;
+}
+nav {
+  display: flex;
+  justify-content: center;
+}
+nav a img{
+margin-left: 30px;
+height: 30px;
+float: left;
+}
+
+nav a {
+  width: 100%;
+  text-align: center;
+  padding: 10px;
+  border-radius: 20px;
+  margin: 10px;
+  font-weight: bold;
+  background: linear-gradient(to right, #26648d, rgb(104, 40, 104));
+  color: #ffffff;
+  text-decoration: none;
+}
+nav a:hover {
+  background: linear-gradient(to right, #68bdf7, purple); 
+  text-decoration: none;
+}
