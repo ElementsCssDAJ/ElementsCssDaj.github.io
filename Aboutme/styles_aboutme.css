@@ -104,6 +104,48 @@ nav a {
   text-decoration: none;
 }
 nav a:hover {
-  background: linear-gradient(to right, #68bdf7, purple); 
+  background: linear-gradient(to right, #68bdf7, rgb(88, 34, 88)); 
   text-decoration: none;
+  transition: background 0.3s ease;
+}
+
+.social-buttons {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.btn-social {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 15px;
+  margin: 5px;
+  font-size: 1.2em;
+  text-decoration: none;
+  border-radius: 30px;
+  color: white;
+  transition: background 0.3s ease;
+}
+
+.btn-social img {
+  margin-right: 8px;
+  width: 20px;
+  color: white;
+}
+
+.btn-social[href*="github"] {
+  background: #333;
+}
+
+.btn-social[href*="github"]:hover {
+  background: #555;
+}
+
+.btn-social[href*="linkedin"] {
+  background: #0077b5;
+}
+
+.btn-social[href*="linkedin"]:hover {
+  background: #005582;
 }
