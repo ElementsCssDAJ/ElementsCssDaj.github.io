@@ -138,11 +138,14 @@ body {
     grid-area: header;
     color: #fff;
     text-align: center;
-    border-radius: 0; /* Quita bordes redondeados */
+    border-radius: 0;
     display: flex;
     align-items: center;
     gap: 10px;
-  }
+    grid-column: 1 / 3;
+    margin-left: 30%;
+}
+
   #headercontainer {
     position: relative;
   }
