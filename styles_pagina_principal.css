@@ -367,3 +367,79 @@ body {
 .theme-checkbox:checked {
   background-position: 100%;
 }
+
+/* ----------------Media Queries-------------------- */
+@media (max-width: 1500px) and (min-width: 1200px) {
+
+    .container {
+        display: grid;
+        grid-template-areas:
+        "left header header"
+        "left . right";
+        grid-template-columns: 1fr 3fr 1.8fr;
+        grid-template-rows: auto 1fr;
+        gap: 10px;
+        width: 100vw;
+        height: 100vh;
+    }
+}
+
+/* Para pantallas menores a 1200px */
+@media (max-width: 1200px) {
+  .ad {
+    display: none;
+}
+    .container {
+        display: grid;
+        grid-template-areas:
+        "left header header"
+        "left . right";
+        grid-template-columns: 1fr 3fr;
+        grid-template-rows: auto 1fr;
+        gap: 10px;
+        width: 100vw;
+        height: 100vh;
+    }
+}
+
+/* Para ocultar el elemento .ad en móviles */
+@media (max-width: 768px) {
+  .ad {
+      display: none;
+  }
+    .container {
+        display: grid;
+        grid-template-areas:
+        "left header header"
+        "left . right";
+        grid-template-columns: 1fr 3fr;
+        grid-template-rows: auto 1fr;
+        gap: 10px;
+        width: 100vw;
+        height: 100vh;
+    }
+    #headercontainer h1 {
+      font-weight: bold;
+      background: linear-gradient(to right, #68bdf7, #8a4cf7);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-size: 5rem;
+      margin-top: 20px;
+  }
+
+  .header {
+    position: relative;
+    grid-area: header;
+    color: #fff;
+    text-align: center;
+    border-radius: 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    grid-column: 1 / 2;
+    margin-left: 30%;
+    flex-direction: column;
+    flex-wrap: nowrap;
+}
+
+}
