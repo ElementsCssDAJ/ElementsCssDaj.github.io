@@ -216,17 +216,13 @@ body {
 
 
 .show-code-btn {
-  position: relative;
-  left: 20%;
-  /* Ajusta esta distancia según sea necesario */
-  /* Coloca el botón en el centro horizontalmente */
-  transform: translateX(-50%);
   padding: 10px 20px;
   border: 1px solid rgba(85, 85, 85, 1);
   border-radius: 30px;
   background-color: rgba(42, 42, 42, 1);
   color: white;
   cursor: pointer;
+  margin-left: 32%;
 }
 
 .show-code-btn:hover {
