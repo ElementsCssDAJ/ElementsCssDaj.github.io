@@ -3,9 +3,176 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tutorials</title>
+    <title>Video Tutoriales</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #121212;
+            color: white;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+        }
+        .container {
+            display: flex;
+            width: 80%;
+            max-width: 1200px;
+            gap: 20px;
+        }
+        .video-container {
+            flex: 2;
+            padding: 10px;
+            border-radius: 10px;
+            background: #1e1e1e;
+            text-align: center;
+            padding-bottom: 20px;
+            min-width: 700px;
+        }
+        .video-container iframe {
+            width: 100%;
+            height: 400px;
+            border: none;
+            border-radius: 10px;
+        }
+        .video-title-container {
+            margin-top: 10px;
+            font-size: 20px;
+            font-weight: bold;
+            color: #b983ff;
+        }
+        .video-list {
+            flex: 1;
+            background: #1e1e1e;
+            border-radius: 10px;
+            text-align: center;
+            padding: 20px;
+        }
+        .video-title {
+            font-size: 78px;
+            font-weight: bold;
+            color: #b983ff;
+            margin-bottom: 10px;
+        }
+        .video-description {
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+        .video-item {
+            background: #292929;
+            margin: 10px 0;
+            padding: 10px;
+            border-radius: 10px;
+            cursor: pointer;
+            text-align: center;
+        }
+        .video-item img {
+            width: 100%;
+            border-radius: 5px;
+        }
+        .video-item span {
+            display: block;
+            margin-top: 5px;
+            font-size: 16px;
+            font-weight: bold;
+        }
+        .video-item:hover {
+            background: #444;
+        }
+        .nav-button {
+            display: flex;
+            align-items: right;
+            justify-content: center;
+            background-color: #444;
+            color: #fff;
+            border: none;
+            width: 50px;
+            /* Ancho inicial solo para mostrar la imagen */
+            height: 50px;
+            /* Altura fija */
+            text-align: left;
+            font-size: 1rem;
+            cursor: pointer;
+            border-radius: 10px;
+            transition: background-color 0.3s ease, width 0.3s ease;
+            overflow: hidden;
+            }
+            .nav-button img {
+            position: absolute;
+            width: 30px;
+            left: 20px;
+            }
+            .nav-button span {
+            opacity: 0;
+            white-space: nowrap;
+            transition: opacity 0.3s ease;
+            margin-left: 10px;
+            }
+            .nav-button:hover {
+            background-color: #6e8efb;
+            width: 250px;
+            /* Ancho al hacer hover */
+            }
+            .nav-button:hover span {
+            opacity: 1;
+            }
+            .sidebar.left {
+                grid-area: left;
+                padding: 10px;
+                /* Menor padding para ajustarlo */
+                border-radius: 0;
+                /* Quita bordes redondeados */
+                position: fixed;
+                left: 0;
+                }
+        </style>
 </head>
 <body>
-    <h1>Tutorials</h1>
+    <nav class="sidebar left">
+        <button class="nav-button" onclick="window.location.href='/'">
+            <img src="/imgs/weblogoDAJ.webp" alt="Home">
+            <span>Home</span>
+        </button>
+        <button class="nav-button" onclick="window.location.href='/editor/editor.html'">
+            <img src="/imgs/editorDAJ.webp" alt="Editor">
+            <span>Editor Html/Css/JS</span>
+        </button>
+        <button class="nav-button" onclick="window.location.href='/Aboutme/aboutme.html'">
+            <img src="/imgs/aboutmeDAJ.webp" alt="About Me">
+            <span>About Me</span>
+        </button>
+        <button class="nav-button" onclick="window.location.href='/tutorials/tutorials.html'">
+            <img src="/imgs/helpDAJ.webp" alt="Tutorials">
+            <span>Tutorials</span>
+        </button>
+      </nav>
+    <div class="container">
+        <div class="video-container">
+            <iframe id="videoFrame" src="https://www.youtube.com/embed/688B_WkkPok?si=LjuxhzsXqmFK0Bbl" allowfullscreen></iframe>
+            <div class="video-title-container" id="currentVideoTitle">CSS Basic Tutorial</div>
+        </div>
+        <div class="video-list">
+            <div class="video-title">Tutorials</div>
+            <div class="video-description">Our tutorials teach you from basic to advanced how to use our CSS elements and integrate them into the web with our step-by-step guides.</div>
+            <div class="video-item" onclick="changeVideo('https://www.youtube.com/embed/688B_WkkPok?si=LjuxhzsXqmFK0Bbl', 'CSS Basic Tutorial')">
+                <img src="/tutorials/miniatura1-min.webp" alt="CSS Basic Tutorial">
+                <span>CSS Basic Tutorial</span>
+            </div>
+            <div class="video-item" onclick="changeVideo('https://www.youtube.com/embed/688B_WkkPok?si=LjuxhzsXqmFK0Bbl', 'Explained')">
+                <img src="/tutorials/miniatura2-min.webp" alt="Explained">
+                <span>Explained</span>
+            </div>
+            <div class="video-item" onclick="changeVideo('https://www.youtube.com/embed/688B_WkkPok?si=LjuxhzsXqmFK0Bbl', 'Creating More Videos')">
+                <img src="/tutorials/miniatura3-min.webp" alt="Creating More Videos">
+                <span>Creating More Videos</span>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        function changeVideo(url, title) {
+            document.getElementById("videoFrame").src = url;
+            document.getElementById("currentVideoTitle").textContent = title;
+        }
+    </script>
 </body>
 </html>
