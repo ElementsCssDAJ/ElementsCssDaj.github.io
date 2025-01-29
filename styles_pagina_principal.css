@@ -401,30 +401,38 @@ body {
         height: 100vh;
     }
 }
-
+/* Para ocultar el elemento .ad en móviles */
 /* Para ocultar el elemento .ad en móviles */
 @media (max-width: 768px) {
   .ad {
-      display: none;
+    display: none;
   }
-    .container {
-        display: grid;
-        grid-template-areas:
-        "left header header"
-        "left . right";
-        grid-template-columns: 1fr 3fr;
-        grid-template-rows: auto 1fr;
-        gap: 10px;
-        width: 100vw;
-        height: 100vh;
-    }
-    #headercontainer h1 {
-      font-weight: bold;
-      background: linear-gradient(to right, #68bdf7, #8a4cf7);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      font-size: 5rem;
-      margin-top: 20px;
+  .sidebar.left {
+    grid-area: left;
+    padding: 10px;
+    border-radius: 0;
+    position: fixed;
+    z-index: 80;
+}
+  .container {
+    display: grid;
+    grid-template-areas:
+    "left header header"
+    "left . right";
+    grid-template-columns: 1fr 3fr;
+    grid-template-rows: auto 1fr;
+    gap: 10px;
+    width: 100vw;
+    height: 100vh;
+  }
+
+  #headercontainer h1 {
+    font-weight: bold;
+    background: linear-gradient(to right, #68bdf7, #8a4cf7);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 5rem;
+    margin-top: 20px;
   }
 
   .header {
@@ -440,6 +448,58 @@ body {
     margin-left: 30%;
     flex-direction: column;
     flex-wrap: nowrap;
-}
+ 
+  }
 
+  /* Mantener los elementos seleccionables en fila */
+  .search-bar {
+    position: relative;
+    top: 150px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    margin-top: 20px;
+    width: 100%;
+  }
+  /* Espaciado entre los selectores y el buscador */
+  .search-bar input {
+    width: 350px; /* Ajuste del tamaño del input */
+  }
+
+  .search-bar .search-btn {
+    display: none;
+  }
+
+  /* Separar el search-bar de los selectores */
+  .search-bar + .search-bar {
+    margin-top: 20px; /* Separación entre los elementos */
+  }
+  #posts-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0;
+    margin: 0;
+    padding: 0;
+    flex-direction: row;
+    justify-content: flex-end;
+    margin-top: 120px;
+}
+.post {
+  width: 350px;
+  min-width: 350px;
+
+  /* height: 430px; */
+  float: right;
+  margin: 10px;
+  border-radius: 30px;
+  border: 3px solid #6e8efb;
+  background: rgba(37, 35, 35, 0.9);
+  box-shadow: 0px 0px 11.3px 2px rgba(0, 0, 0, 0.25) inset;
+  padding: 30px;
+  margin: auto;
+  position: relative;
+  left: 40px!important;
+  transition: opacity 0.5s ease;
+}
 }
