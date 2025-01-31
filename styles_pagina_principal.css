@@ -164,7 +164,6 @@ body {
 #headersearch {
   position: absolute;
   bottom: 0;
-  width: 700px;
   height: 230px;
   border-radius: 10px;
   display: flex;
