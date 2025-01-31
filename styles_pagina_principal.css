@@ -519,6 +519,10 @@ body {
   justify-content: center;
   align-items: center;
 }
+#headercontainer {
+  position: relative;
+  left: -30px;
+}
 
 #headercontainer h2 {
   top: 40%;
